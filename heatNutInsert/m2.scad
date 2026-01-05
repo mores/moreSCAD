@@ -12,7 +12,7 @@ module nutInsertM2( additionalHeight = 0, additionalDiameter = 0 )
 		echo("Warning: You are going below recommended diameter !");
 	}
 
-	insert_od      = 3.0;
+	insert_od      = 3.1;
 	insert_depth   = 4.5;
 	spacer_od      = 6.0 + additionalDiameter;
 	spacer_height  = 5.0 + additionalHeight;

@@ -11,7 +11,7 @@ module nutM2( additionalHeight = 0, additionalDiameter = 0 )
                 echo("Warning: You are going below recommended diameter !");
         }
 
-	pilot_od     = 1.6;  // mm
+	pilot_od     = 1.8;  // mm
 	hole_depth   = 3.0;  // mm
 	spacer_od    = 4.0 + additionalDiameter;
 	spacer_height= 3.5 + additionalHeight;
@@ -19,6 +19,6 @@ module nutM2( additionalHeight = 0, additionalDiameter = 0 )
 	difference() {
 	    cylinder(h = spacer_height, d = spacer_od, $fn = 32);
 	    translate([0,0,-1])
-		cylinder(h = hole_depth + 1, d = pilot_od, $fn = 24);
+		cylinder(h = hole_depth + 1, d1=pilot_od + 0.3, d2 = pilot_od, $fn = 24);
 	}
 }

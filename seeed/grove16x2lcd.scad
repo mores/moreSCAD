@@ -7,7 +7,7 @@ use <moreSCAD/seeed/groveConnector.scad>
 grove16x2lcdWidth = 80;
 grove16x2lcdHeight = 40;
 
-grove16x2lcdDisplayWidth = 70;
+grove16x2lcdDisplayWidth = 71;
 grove16x2lcdDisplayHeight = 24;
 
 module grove16x2lcd()
