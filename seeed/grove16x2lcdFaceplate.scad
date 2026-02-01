@@ -2,7 +2,7 @@ include <moreSCAD/seeed/grove16x2lcd.scad>
 use <moreSCAD/heatNutInsert/m2.scad>
 use <moreSCAD/nut/m2.scad>
 
-module grove16x2lcdFaceplate()
+module grove16x2lcdFaceplate( thickness = 2.0 )
 {
 	padding = 1;
 
@@ -10,9 +10,9 @@ module grove16x2lcdFaceplate()
 	{
 		union()
 		{
-			color( "red" ) translate( [-10,-10,6]) cube( [60,100,2] );
-			color( "black" ) translate( [-10,42,6] ) cube( [60,1,2] );
-			color( "black" ) translate( [23.5,-10,6] ) cube( [1,100,2] );
+			color( "red" ) translate( [-10,-10,6]) cube( [60,100,thickness] );
+			color( "black" ) translate( [-10,42,6] ) cube( [60,1,thickness] );
+			color( "black" ) translate( [23.5,-10,6] ) cube( [1,100,thickness] );
 		}
 		translate( [12-padding/2,7-padding/2,5] ) cube( [grove16x2lcdDisplayHeight+padding,(grove16x2lcdDisplayWidth+padding),8] );
 
