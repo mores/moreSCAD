@@ -25,4 +25,21 @@ module grove16x2lcdFaceplate( thickness = 2.0 )
 	color( "red" ) rotate( [0,0,0] ) translate( [grove16x2lcdHeight-2,0+2,1] ) nutInsertM2( additionalHeight=0, additionalDiameter=3 );
 	color( "red" ) rotate( [0,0,0] ) translate( [0+2,grove16x2lcdWidth-2,1] ) nutInsertM2( additionalHeight=0, additionalDiameter=0 );
 	color( "red" ) rotate( [0,0,0] ) translate( [0+2,0+2,1] ) nutInsertM2( additionalHeight=0, additionalDiameter=5 );
+
+	color( "red" ) difference()
+	{
+		translate([37,77,-1] ) gusset();
+		$fn=50;
+		translate([38,78,-4] ) cylinder(h=10,r=1.375);
+		translate([36,76,-4] ) cube( [5,5,5] );
+	}
+}
+
+module gusset()
+{
+	intersection()
+	{
+		translate( [0,0,4] ) rotate( [0,180,0] ) cylinder(h=10, d1=18, d2=0, center=true);
+		translate( [0,0,-10] ) cube( [10,10,50 ] );
+	}
 }
