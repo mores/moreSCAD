@@ -20,6 +20,6 @@ module nutM2point5( additionalHeight = 0, additionalDiameter = 0 )
 	difference() {
 	    cylinder(h = spacer_height, d = spacer_od, $fn = 36);
 	    translate([0,0,-1])
-		cylinder(h = hole_depth + 1, d = pilot_od, $fn = 28);
+		cylinder(h = hole_depth + 1, d1 = pilot_od + 0.7, d2 = pilot_od, $fn = 28);
 	}
 }
