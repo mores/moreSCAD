@@ -4,15 +4,15 @@ use <moreSCAD/nut/m2.scad>
 
 module grove16x2lcdFaceplate( thickness = 2.0 )
 {
-	padding = 1;
+	padding = 1.5;
 
 	difference()
 	{
 		union()
 		{
-			color( "red" ) translate( [-10,-10,6]) cube( [60,100,thickness] );
-			color( "black" ) translate( [-10,42,6] ) cube( [60,1,thickness] );
-			color( "black" ) translate( [23.5,-10,6] ) cube( [1,100,thickness] );
+			color( "red" ) translate( [-4,-4,6]) cube( [50,90,thickness] );
+			color( "black" ) translate( [-4,42,6] ) cube( [50,1,thickness] );
+			color( "black" ) translate( [23.5,-4,6] ) cube( [1,90,thickness] );
 		}
 		translate( [12-padding/2,7-padding/2,5] ) cube( [grove16x2lcdDisplayHeight+padding,(grove16x2lcdDisplayWidth+padding),8] );
 
