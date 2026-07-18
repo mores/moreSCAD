@@ -1,6 +1,6 @@
 use <female2pin.scad>
 
-module femaleBottom() {
+module dupontFemaleBottom() {
 
 	render()
 	difference() {
