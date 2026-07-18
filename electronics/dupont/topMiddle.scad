@@ -6,8 +6,8 @@ module dupontTopMiddle() {
 	difference() {
 		dupont2pinTop();
 
-		translate( [25.50,-20,0] ) cube( [10,40,10] );
+		translate( [26,-20,0] ) cube( [10,40,10] );
 
-		translate( [42.50,-20,0] ) cube( [10,40,10] );
+		translate( [42.00,-20,0] ) cube( [10,40,10] );
 	}
 }
