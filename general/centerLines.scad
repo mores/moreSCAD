@@ -15,6 +15,33 @@ module global_center_line(p1, p2) {
     }
 }
 
+module cylinder_center_lines(h=1, r=undef, d=undef, r1=undef, r2=undef, d1=undef, d2=undef, center=false) {
+    if (SHOW_CENTER_LINES) {
+        // 1. Resolve diameters/radii for both ends (handles cones as well)
+        start_r = (r1 != undef) ? r1 : ((d1 != undef) ? d1/2 : ((r != undef) ? r : ((d != undef) ? d/2 : 1)));
+        end_r   = (r2 != undef) ? r2 : ((d2 != undef) ? d2/2 : ((r != undef) ? r : ((d != undef) ? d/2 : 1)));
+        
+        // 2. Calculate Z height bounds based on center flag
+        z_min = center ? -h/2 : 0;
+        z_max = center ?  h/2 : h;
+        
+        // 3. --- BOTTOM FACE CROSSHAIRS ---
+        global_center_line([-start_r, 0, z_min], [start_r, 0, z_min]); // X-axis cross
+        global_center_line([0, -start_r, z_min], [0, start_r, z_min]); // Y-axis cross
+        
+        // 4. --- TOP FACE CROSSHAIRS ---
+        global_center_line([-end_r, 0, z_max], [end_r, 0, z_max]);     // X-axis cross
+        global_center_line([0, -end_r, z_max], [0, end_r, z_max]);     // Y-axis cross
+        
+        // 5. --- SIDE WALL VERTICAL LINES ---
+        // Slices down the 4 quadrants of the cylinder wall (adjusts automatically for tapered cones)
+        global_center_line([-start_r, 0, z_min], [-end_r, 0, z_max]);   // Left wall
+        global_center_line([start_r, 0, z_min],  [end_r, 0, z_max]);    // Right wall
+        global_center_line([0, -start_r, z_min], [0, -end_r, z_max]);   // Front wall
+        global_center_line([0, start_r, z_min],  [0, end_r, z_max]);    // Back wall
+    }
+}
+
 module cube_center_lines(size=[1,1,1], center=false) {
     if (SHOW_CENTER_LINES) {
         // Safely extract X, Y, Z dimensions
