@@ -29,6 +29,6 @@ module nutInsertM2( additionalHeight = 0, additionalDiameter = 0, spacer = true 
 	}
 	else
 	{
-		translate([0,0,-1]) cylinder(h = insert_depth + 1, d = insert_od, $fn = 30);
+		translate([0,0,-1]) cylinder(h = insert_depth + 1 + additionalHeight, d = insert_od, $fn = 30);
 	}
 }
