@@ -19,7 +19,7 @@ module spn_brc_0004_adapter()
 		translate( [25,0,-1] ) rotate( [0,0,45] ) fiveHoles(
 			centerDiameter = 3.2,
 			outerDiameter = 3.2,
-			distanceFromCenter = 6.5,
+			distanceFromCenter = 7.25,
 			height = 20
 		);
 		translate( [12.5,0,1.5] ) rotate( [0,0,0] ) cylinder(h=6.0, d=7, center=true);

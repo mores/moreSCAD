@@ -18,7 +18,7 @@ module spn_brc_0601_adapter()
                 translate( [0,0,-1] ) rotate( [0,0,45] ) fiveHoles(
                         centerDiameter = 3.2,
                         outerDiameter = 3.2, 
-                        distanceFromCenter = 6.5,
+                        distanceFromCenter = 7.25,
                         height = 20
                 );
 
